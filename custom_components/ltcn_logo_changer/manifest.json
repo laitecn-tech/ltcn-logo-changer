@@ -1,0 +1,15 @@
+{
+  "domain": "ltcn_logo_changer",
+  "name": "LTCN LOGO CHANGER",
+  "version": "v0.8.0",
+  "config_flow": true,
+  "single_config_entry": true,
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "dependencies": ["file_upload", "frontend", "persistent_notification"],
+  "after_dependencies": ["favicon"],
+  "requirements": ["Pillow>=11.0.0"],
+  "documentation": "https://github.com/laitecn-tech/ltcn-logo-changer",
+  "issue_tracker": "https://github.com/laitecn-tech/ltcn-logo-changer/issues",
+  "codeowners": ["@laitecn-tech"]
+}
