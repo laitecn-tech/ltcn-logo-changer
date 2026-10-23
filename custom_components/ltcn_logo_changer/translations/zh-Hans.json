@@ -1,0 +1,63 @@
+{
+  "title": "LTCN LOGO CHANGER",
+  "config": {
+    "step": {
+      "user": {
+        "title": "设置品牌名称与图标",
+        "description": "填写名称并上传一张图片即可。支持 PNG、JPG、WebP、ICO，最大 5 MB。建议使用 512 × 512 或更大的正方形图片。系统会自动生成全部所需图标尺寸，长方形图片也会等比处理，无需自行转换或移动文件。\n\n保存后，重启 Home Assistant 生效。",
+        "data": {"brand_name": "品牌名称", "icon_upload": "上传图标"},
+        "data_description": {"brand_name": "1–64 个字符，用于网页和左侧导航栏标题。"}
+      }
+    },
+    "create_entry": {"default": "图标已自动转换并保存。请重启 Home Assistant，然后重新打开 App 或刷新网页。"},
+    "abort": {
+      "single_instance_allowed": "已经设置了品牌，请点击现有 LTCN LOGO CHANGER 集成的「配置」进行修改。",
+      "already_configured": "LTCN LOGO CHANGER 已经添加。"
+    },
+    "error": {
+      "invalid_name": "请输入 1–64 个字符的名称，不要包含尖括号、换行或控制字符。",
+      "invalid_image": "无法读取这张图片，请重新选择有效的 PNG、JPG、WebP 或 ICO 文件。",
+      "unsupported_image": "不支持此图片格式，请选择 PNG、JPG、WebP 或 ICO 文件。",
+      "image_too_large": "图片超过 5 MB，请选择较小的文件。",
+      "invalid_dimensions": "图片每边需为 16–8192 像素，总像素不能超过 1600 万。",
+      "animated_image": "暂不支持动态图，请选择静态图片。",
+      "upload_expired": "临时上传已失效，请重新选择图片。",
+      "upload_required": "请上传图标，之前保存的图片目前不可用。",
+      "storage_error": "图标保存失败，请检查剩余空间和目录权限，然后重新选择图片。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "LTCN LOGO CHANGER",
+        "menu_options": {"configure": "修改名称或图标", "reset": "恢复 Home Assistant 默认品牌"}
+      },
+      "configure": {
+        "title": "修改品牌",
+        "description": "不上传新图片时，会保留当前图标。支持 PNG、JPG、WebP、ICO，最大 5 MB，系统自动转换。\n\n保存后请重启 Home Assistant，再重新打开 App 或刷新网页。\n\n{preview}",
+        "data": {"brand_name": "品牌名称", "icon_upload": "更换图标（可不选）"}
+      },
+      "reset": {
+        "title": "恢复默认品牌",
+        "description": "保存并重启 Home Assistant 后，将使用默认网页图标和标题。之前上传的图标会保留，方便以后恢复自定义品牌。"
+      }
+    },
+    "error": {
+      "invalid_name": "请输入 1–64 个字符的名称，不要包含尖括号、换行或控制字符。",
+      "invalid_image": "无法读取这张图片，请重新选择有效的 PNG、JPG、WebP 或 ICO 文件。",
+      "unsupported_image": "不支持此图片格式，请选择 PNG、JPG、WebP 或 ICO 文件。",
+      "image_too_large": "图片超过 5 MB，请选择较小的文件。",
+      "invalid_dimensions": "图片每边需为 16–8192 像素，总像素不能超过 1600 万。",
+      "animated_image": "暂不支持动态图，请选择静态图片。",
+      "upload_expired": "临时上传已失效，请重新选择图片。",
+      "upload_required": "请上传图标，之前保存的图片目前不可用。",
+      "storage_error": "图标保存失败，请检查剩余空间和目录权限，然后重新选择图片。"
+    }
+  },
+  "exceptions": {
+    "single_instance": {"message": "只能启用一个 LTCN LOGO CHANGER 配置。"},
+    "legacy_conflict": {"message": "检测到无法安全接管的旧品牌修改。请停用 Favicon changer 并重启 Home Assistant 后，再启用 LTCN LOGO CHANGER。"},
+    "invalid_settings": {"message": "保存的品牌名称不正确，请打开「配置」重新填写名称。"},
+    "missing_icons": {"message": "保存的图标文件缺失，请打开「配置」重新上传图标，然后重启 Home Assistant。"}
+  }
+}

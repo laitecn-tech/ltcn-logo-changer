@@ -1,0 +1,63 @@
+{
+  "title": "LTCN LOGO CHANGER",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set your Home Assistant brand",
+        "description": "Enter a name and upload one image. PNG, JPG, WebP and ICO are supported, up to 5 MB. A square image of at least 512 × 512 is recommended. All required icon sizes are generated automatically; rectangular images keep their proportions.\n\nSave, then restart Home Assistant to apply.",
+        "data": {"brand_name": "Brand name", "icon_upload": "Upload an icon"},
+        "data_description": {"brand_name": "1–64 characters. Used for the web page and sidebar title."}
+      }
+    },
+    "create_entry": {"default": "Your icon has been converted and saved. Restart Home Assistant, then reopen the App or reload the web page."},
+    "abort": {
+      "single_instance_allowed": "A brand is already configured. Use Configure on the existing LTCN LOGO CHANGER entry.",
+      "already_configured": "LTCN LOGO CHANGER is already configured."
+    },
+    "error": {
+      "invalid_name": "Enter a name of 1–64 characters, without angle brackets, line breaks or control characters.",
+      "invalid_image": "This image could not be read. Select a valid PNG, JPG, WebP or ICO file again.",
+      "unsupported_image": "This image format is not supported. Select a PNG, JPG, WebP or ICO file.",
+      "image_too_large": "The image is larger than 5 MB. Select a smaller file.",
+      "invalid_dimensions": "Each side must be at least 16 pixels, at most 8192 pixels, and the image must not exceed 16 megapixels.",
+      "animated_image": "Animated images are not supported. Select a still image.",
+      "upload_expired": "The temporary upload has expired. Select the image again.",
+      "upload_required": "Upload an icon. The previously saved image is unavailable.",
+      "storage_error": "The icon could not be saved. Check free space and folder permissions, then select the image again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "LTCN LOGO CHANGER",
+        "menu_options": {"configure": "Change name or icon", "reset": "Restore Home Assistant defaults"}
+      },
+      "configure": {
+        "title": "Change your brand",
+        "description": "Your current icon is retained if you leave the upload empty. PNG, JPG, WebP and ICO up to 5 MB are converted automatically.\n\nChanges take effect after restarting Home Assistant and reopening the App or web page.\n\n{preview}",
+        "data": {"brand_name": "Brand name", "icon_upload": "Replace the icon (optional)"}
+      },
+      "reset": {
+        "title": "Restore default brand",
+        "description": "After saving and restarting Home Assistant, the default web icon and title will be used. Your last custom image is kept so you can use it again later."
+      }
+    },
+    "error": {
+      "invalid_name": "Enter a name of 1–64 characters, without angle brackets, line breaks or control characters.",
+      "invalid_image": "This image could not be read. Select a valid PNG, JPG, WebP or ICO file again.",
+      "unsupported_image": "This image format is not supported. Select a PNG, JPG, WebP or ICO file.",
+      "image_too_large": "The image is larger than 5 MB. Select a smaller file.",
+      "invalid_dimensions": "Each side must be at least 16 pixels, at most 8192 pixels, and the image must not exceed 16 megapixels.",
+      "animated_image": "Animated images are not supported. Select a still image.",
+      "upload_expired": "The temporary upload has expired. Select the image again.",
+      "upload_required": "Upload an icon. The previously saved image is unavailable.",
+      "storage_error": "The icon could not be saved. Check free space and folder permissions, then select the image again."
+    }
+  },
+  "exceptions": {
+    "single_instance": {"message": "Only one LTCN LOGO CHANGER entry is supported."},
+    "legacy_conflict": {"message": "An unsupported old branding modification was detected. Disable Favicon changer and restart Home Assistant before enabling LTCN LOGO CHANGER."},
+    "invalid_settings": {"message": "The saved brand name is invalid. Open Configure and save a valid name."},
+    "missing_icons": {"message": "Saved icon files are missing. Open Configure, upload the icon again, then restart Home Assistant."}
+  }
+}
